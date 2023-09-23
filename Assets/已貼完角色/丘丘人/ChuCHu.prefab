@@ -7519,7 +7519,7 @@ GameObject:
   - component: {fileID: 1201373838970365819}
   m_Layer: 0
   m_Name: ChuCHu
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7590,6 +7590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Animator>k__BackingField: {fileID: 2893610673790472274}
+  <Controller>k__BackingField: {fileID: 0}
+  <ForceReceiver>k__BackingField: {fileID: 0}
+  <PlayerChasingRange>k__BackingField: 10
 --- !u!1 &8576196912746414166
 GameObject:
   m_ObjectHideFlags: 0
