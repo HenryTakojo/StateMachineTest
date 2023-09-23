@@ -831,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406556073256226326}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00569306, y: 1.2352339e-10, z: 7.032374e-13, w: 0.9999838}
+  m_LocalRotation: {x: -0.00569306, y: 1.2352333e-10, z: 7.0323716e-13, w: 0.9999838}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5172,7 +5172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2797567203117382723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17842482, y: 0.000000008465141, z: -0.0000000015350229, w: 0.98395354}
+  m_LocalRotation: {x: 0.1784248, y: -0.000000008465141, z: 0.0000000015350229, w: 0.98395354}
   m_LocalPosition: {x: -7.60194, y: -0.83432305, z: 3.4701014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11256,7 +11256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708770278054468276}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.023833288, y: -0.0000000010750931, z: -2.5630283e-11, w: 0.999716}
+  m_LocalRotation: {x: -0.02383329, y: 1e-45, z: -0, w: 0.999716}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15265,6 +15265,7 @@ GameObject:
   - component: {fileID: 1526762004469573665}
   - component: {fileID: 8036492852311838091}
   - component: {fileID: 4785347639726837829}
+  - component: {fileID: 2560186146165679874}
   m_Layer: 0
   m_Name: Ganyu
   m_TagString: Player
@@ -15362,6 +15363,7 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 8036492852311838091}
   <Weapon>k__BackingField: {fileID: 6819836771525774563, guid: 35da7b04794eb73408e45047c197eddf,
     type: 3}
+  <Health>k__BackingField: {fileID: 2560186146165679874}
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 5
   <RotationDamping>k__BackingField: 5
@@ -15373,6 +15375,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
     <Damage>k__BackingField: 10
+    <Knockback>k__BackingField: 15
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -15380,6 +15383,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
     <Damage>k__BackingField: 10
+    <Knockback>k__BackingField: 20
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -15387,6 +15391,7 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 20
     <Damage>k__BackingField: 15
+    <Knockback>k__BackingField: 25
 --- !u!143 &1526762004469573665
 CharacterController:
   m_ObjectHideFlags: 0
@@ -15426,6 +15431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1526762004469573665}
+  agent: {fileID: 0}
   drag: 0.1
 --- !u!114 &4785347639726837829
 MonoBehaviour:
@@ -15442,6 +15448,19 @@ MonoBehaviour:
   weaponLogic: {fileID: 5558382152666665536}
   iceArrow: {fileID: 7888185296437121462, guid: 35da7b04794eb73408e45047c197eddf,
     type: 3}
+--- !u!114 &2560186146165679874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141189806771082844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a1ffc0440635479dacdaf9fb6dbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &7145345202454026618
 GameObject:
   m_ObjectHideFlags: 0
@@ -18023,7 +18042,7 @@ Transform:
   m_GameObject: {fileID: 8314633066488898441}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000006882553, y: 0.00000011920929, z: 4.2720017}
+  m_LocalPosition: {x: 0.00000006882553, y: 0, z: 4.2720017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

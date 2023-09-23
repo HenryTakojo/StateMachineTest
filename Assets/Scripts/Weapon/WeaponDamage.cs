@@ -12,6 +12,7 @@ public class WeaponDamage : MonoBehaviour
     [SerializeField] private Collider myCollider;
 
     [SerializeField] private int damage;
+    [SerializeField] private float knockback;
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
     
@@ -55,16 +56,22 @@ public class WeaponDamage : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
         //適用於角色身上有武器也有collider，可套用在丘丘人
         //if(collision == myCollider) { return; }
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            if (alreadyCollidedWith.Contains(collision)) { return; }
-            alreadyCollidedWith.Add(collision);
+            if (alreadyCollidedWith.Contains(other)) { return; }
+            alreadyCollidedWith.Add(other);
 
-            DealDamage(collision.gameObject);
+            DealDamage(other.gameObject);
+        }
+
+        if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))
+        {
+            Vector3 direction = (other.transform.position - myCollider.transform.position).normalized;
+            forceReceiver.AddForce(direction * knockback);
         }
     }
 
@@ -76,8 +83,9 @@ public class WeaponDamage : MonoBehaviour
             health.DealDamage(this.damage);
         }
     }
-    public void SetAttack(int damage)
+    public void SetAttack(int damage, float knockback)
     {
         this.damage = damage;
+        this.knockback = knockback;
     }
 }
