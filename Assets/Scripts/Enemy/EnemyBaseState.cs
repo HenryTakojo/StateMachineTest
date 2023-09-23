@@ -24,6 +24,6 @@ public abstract class EnemyBaseState : State
 
     protected void Move(Vector3 motion, float deltaTime)
     {
-        //stateMachine.Controller.Move(motion + stateMachine.ForceReceiver.Movent) * deltaTime);
+        stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 }

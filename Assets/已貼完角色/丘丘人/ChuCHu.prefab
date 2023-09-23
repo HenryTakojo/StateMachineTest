@@ -7515,6 +7515,7 @@ GameObject:
   - component: {fileID: 2130284730060385799}
   - component: {fileID: 3098409059555337252}
   - component: {fileID: 5598638642204213172}
+  - component: {fileID: 4055363558702866377}
   m_Layer: 0
   m_Name: ChuCHu
   m_TagString: Enemy
@@ -7604,6 +7605,8 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 2893610673790472274}
   <Controller>k__BackingField: {fileID: 384531137561563407}
   <ForceReceiver>k__BackingField: {fileID: 5598638642204213172}
+  <Agent>k__BackingField: {fileID: 4055363558702866377}
+  <MovementSpeed>k__BackingField: 3
   <PlayerChasingRange>k__BackingField: 10
 --- !u!114 &2130284730060385799
 MonoBehaviour:
@@ -7644,6 +7647,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 384531137561563407}
   drag: 0.3
+--- !u!195 &4055363558702866377
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467849131761782930}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.29
+  m_Speed: 0
+  m_Acceleration: 0
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.4
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8576196912746414166
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,8 +23,7 @@ public class EnemyIdleState : EnemyBaseState
 
         if (IsInChasingRange())
         {
-            Debug.Log("In CRange");
-            //Transition to Chasing State
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
 
