@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
@@ -10,7 +11,7 @@ public class WeaponDamage : MonoBehaviour
 
     [SerializeField] private Collider myCollider;
 
-    private int damage;
+    [SerializeField] private int damage;
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
     
@@ -49,8 +50,7 @@ public class WeaponDamage : MonoBehaviour
             {
                 if (alreadyCollidedWith.Contains(collider)) { return; }
                 alreadyCollidedWith.Add(collider);
-
-                DealDamage(collider.gameObject, collider);
+                DealDamage(collider.gameObject);
             }
         }
     }
@@ -64,16 +64,16 @@ public class WeaponDamage : MonoBehaviour
             if (alreadyCollidedWith.Contains(collision)) { return; }
             alreadyCollidedWith.Add(collision);
 
-            DealDamage(collision.gameObject, collision);
+            DealDamage(collision.gameObject);
         }
     }
 
-    private void DealDamage(GameObject Enemy, Collider other)
+    private void DealDamage(GameObject Enemy)
     {
         // Enemy Health Decrease
-        if(other.TryGetComponent<Health>(out Health health))
+        if(Enemy.TryGetComponent<Health>(out Health health))
         {
-            health.DealDamage(damage);
+            health.DealDamage(this.damage);
         }
     }
     public void SetAttack(int damage)

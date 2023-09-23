@@ -19,10 +19,11 @@ public class EnemyIdleState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
+        Move(deltaTime);
+
         if (IsInChasingRange())
         {
-            Move(deltaTime);
-
+            Debug.Log("In CRange");
             //Transition to Chasing State
             return;
         }
