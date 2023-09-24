@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     private int health;
 
     public event Action OnTakeDamage;
+    public event Action OnDie;
 
     
     void Start()
@@ -25,6 +26,11 @@ public class Health : MonoBehaviour
 
         OnTakeDamage?.Invoke();
         
+        if (health == 0)
+        {
+            OnDie?.Invoke();
+        }
+
         Debug.Log(health);
     }
 }
