@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDeadState : EnemyBaseState
 {
-    private readonly int ImpactHash = Animator.StringToHash("Dead");
+    private readonly int DeadHash = Animator.StringToHash("Dead");
 
     private const float CrossFadeDuration = 0.1f;
     public EnemyDeadState(EnemyStateMachine stateMachine) : base(stateMachine)
@@ -15,7 +15,7 @@ public class EnemyDeadState : EnemyBaseState
     {
         stateMachine.Weapon.gameObject.SetActive(false);
         GameObject.Destroy(stateMachine.Target);
-        stateMachine.Animator.CrossFadeInFixedTime(ImpactHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(DeadHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)

@@ -831,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406556073256226326}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00569306, y: 1.2352333e-10, z: 7.0323716e-13, w: 0.9999838}
+  m_LocalRotation: {x: -0.0056930613, y: -8.159401e-10, z: -4.645272e-12, w: 0.9999838}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7105,15 +7105,17 @@ MonoBehaviour:
     m_ParentHash: -479991077
   - m_Hash: 1404563900
     m_ParentHash: -479991077
-  - m_Hash: 1742544429
+  - m_Hash: -781694462
     m_ParentHash: -479991077
-  - m_Hash: -1302234382
+  - m_Hash: 419885823
     m_ParentHash: -479991077
   - m_Hash: -1947038436
     m_ParentHash: 756556552
   - m_Hash: -51004022
     m_ParentHash: 756556552
   - m_Hash: 318495910
+    m_ParentHash: 756556552
+  - m_Hash: -1063883918
     m_ParentHash: 756556552
 --- !u!1 &3808268210117831999
 GameObject:

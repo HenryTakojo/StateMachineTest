@@ -34,7 +34,10 @@ public class WeaponDamage : MonoBehaviour
             currentTime = 0;
         }
 
-        transform.position += transform.forward * 20 * Time.deltaTime;
+        if (this.name == "IceArrow(Clone)")
+        {
+            transform.position += transform.forward * 20 * Time.deltaTime;
+        }
     }
 
     private void OnEnable()
